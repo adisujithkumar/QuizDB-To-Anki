@@ -3,10 +3,8 @@ import pandas as pd
 import numpy as np
 import nltk.data
 # initialize file paths
-#data_file_path  = "insert path to the csv file downloaded straight from QuizDB"
-#output_file_path = "insert path to the location where you want to save the csv file for Anki"
-data_file_path  = "C:/Users/adith/Documents/Python Scripts/QuizDB To Anki/tossups-2018-10-25.csv"
-output_file_path = "C:/Users/adith/Documents/Python Scripts/QuizDB To Anki/importToAnki9.csv"
+data_file_path  = "insert path to the csv file downloaded straight from QuizDB"
+output_file_path = "insert path to the location where you want to save the csv file for Anki"
 
 # download the sentence fragmenting package from the natural language processing toolkit
 nltk.download('punkt')
