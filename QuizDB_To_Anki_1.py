@@ -3,12 +3,14 @@ import pandas as pd
 import numpy as np
 import nltk.data
 # initialize file paths
-data_file_path  = "insert path to the csv file downloaded straight from QuizDB"
-output_file_path = "insert path to the location where you want to save the csv file for Anki"
+#data_file_path  = "insert path to the csv file downloaded straight from QuizDB"
+#output_file_path = "insert path to the location where you want to save the csv file for Anki"
+data_file_path  = "C:/Users/adith/Documents/Python Scripts/QuizDB To Anki/tossups-2018-10-25.csv"
+output_file_path = "C:/Users/adith/Documents/Python Scripts/QuizDB To Anki/importToAnki9.csv"
 
-# download the sentence gramenting package from the natural language processing toolkit
+# download the sentence fragmenting package from the natural language processing toolkit
 nltk.download('punkt')
-data = pd.read_csv(data_file_path)
+data = pd.read_csv(data_file_path, encoding='utf-8')
 tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
 QAArr = []
 # for loop to iterate through the questions and answers given by quizdb csv
@@ -27,4 +29,4 @@ for num in range(len(data.index)):
         QAArr = np.hstack((QAArr, extendArray))
 # save as csv to the output file path location
 df = pd.DataFrame(QAArr.T)
-df.to_csv(output_file_path, header = None, index = None)
+df.to_csv(output_file_path, header = None, index = None, encoding = 'utf-8-sig')
